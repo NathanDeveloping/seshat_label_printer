@@ -1,4 +1,4 @@
-package seshat.seshatlabel;
+package seshat.seshatlabel.print;
 import android.os.Looper;
 import com.zebra.sdk.comm.BluetoothConnectionInsecure;
 import com.zebra.sdk.comm.Connection;

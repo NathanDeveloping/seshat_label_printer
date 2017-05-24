@@ -2,7 +2,7 @@ package seshat.seshatlabel;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import seshat.seshatlabel.BluetoothPrinter;
+import seshat.seshatlabel.print.BluetoothPrinter;
 
 public class MainActivity extends AppCompatActivity {
 
