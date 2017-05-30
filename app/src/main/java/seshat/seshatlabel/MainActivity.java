@@ -1,5 +1,6 @@
 package seshat.seshatlabel;
 
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -44,11 +45,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button printButton = (Button)findViewById(R.id.printButton);
         printButton.setOnClickListener(this);
         adpt = new SimpleAdapter(new ArrayList<LabelModel>(), this);
-        this.printer = new BluetoothPrinter();
+        this.printer = new BluetoothPrinter(this);
         this.list = (ListView) findViewById(R.id.listview);
         this.list.setAdapter(adpt);
+        Resources res = this.getResources();
+        String ip = res.getString(R.string.piAddress);
+        String port = res.getString(R.string.piPort);
         // Exec async load task
-        (new AsyncListViewLoader(this, adpt, mainActivity)).execute("http://10.10.10.10:8080/index.php/api/labels");
+        (new AsyncListViewLoader(this, adpt, mainActivity)).execute("http://" + ip + ":" + port + "/index.php/api/labels");
     }
 
     public void onClick(View v)
@@ -77,7 +81,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (item.getItemId()){
             case R.id.action_refresh:
                 View mainActivity = findViewById(android.R.id.content);
-                (new AsyncListViewLoader(this, adpt, mainActivity)).execute("http://10.10.10.10:8080/index.php/api/labels");
+                Resources res = this.getResources();
+                String ip = res.getString(R.string.piAddress);
+                String port = res.getString(R.string.piPort);
+                (new AsyncListViewLoader(this, adpt, mainActivity)).execute("http://" + ip + ":" + port + "/index.php/api/labelss");
                 return true;
         }
 
