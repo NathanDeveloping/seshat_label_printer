@@ -1,39 +1,74 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.daimajia.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content">
 
-    <TableLayout
-        android:layout_width="match_parent"
+    <!-- Bottom View Start-->
+    <LinearLayout
+        android:id="@+id/bottom_wrapper"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="10dp"
-        android:stretchColumns="1">
+        android:background="@android:color/holo_blue_dark"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        <!--What you want to show-->
+        <Button
+            android:id="@+id/moins"
+            android:layout_width="56dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="0.00"
+            android:text="-" />
 
-        <TableRow
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/compteur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.00"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/plus"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:text="+" />
+
+
+    </LinearLayout>
+    <!-- Bottom View End-->
+
+    <!-- Surface View Start -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="1">
+        <!--What you want to show in SurfaceView-->
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginBottom="4dp"
-            android:layout_marginLeft="4dp">
+            android:layout_gravity="left"
+            android:text="TextView"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/label"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="left|center_vertical"
-                android:text="TextView"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right|center_vertical"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableRight="?android:attr/listChoiceIndicatorMultiple" />
 
-            <CheckBox
-                android:id="@+id/checkBox"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="right|center_vertical" />
+    </LinearLayout>
+    <!-- Surface View End -->
 
-        </TableRow>
-
-    </TableLayout>
-</LinearLayout>
+</com.daimajia.swipe.SwipeLayout>
