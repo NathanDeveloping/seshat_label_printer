@@ -20,6 +20,7 @@ public class LabelModel implements Serializable {
     private boolean checked;
     private CheckBox checkBox;
     private TextView textView;
+    private int nbImpressions;
 
     public CheckBox getCheckBox() {
         return checkBox;
@@ -59,6 +60,7 @@ public class LabelModel implements Serializable {
         } finally {
             this.year = "" + time.getYear();
         }
+        this.nbImpressions = 0;
 
     }
 
@@ -80,5 +82,25 @@ public class LabelModel implements Serializable {
 
     public String getLabel() {
         return this.label;
+    }
+
+    public void incrementImpressions() {
+        if(this.nbImpressions < 5) {
+            this.nbImpressions++;
+        }
+    }
+
+    public void decrementImpressions() {
+        if(this.nbImpressions > 1) {
+            this.nbImpressions--;
+        }
+    }
+
+    public int getNbImpressions() {
+        return this.nbImpressions;
+    }
+
+    public void setNbImpressions(int nb) {
+        this.nbImpressions = nb;
     }
 }

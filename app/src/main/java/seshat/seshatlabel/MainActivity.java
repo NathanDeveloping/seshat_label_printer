@@ -4,14 +4,15 @@ import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.util.SparseBooleanArray;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.ListView;
+
+
+import com.daimajia.swipe.SwipeLayout;
+import com.daimajia.swipe.util.Attributes;
 
 import java.util.ArrayList;
 
@@ -20,7 +21,7 @@ import seshat.seshatlabel.print.BluetoothPrinter;
 import seshat.seshatlabel.views.AsyncListViewLoader;
 import seshat.seshatlabel.views.SimpleAdapter;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     /**
      * Adaptateur permettant l'affichage des données
@@ -44,10 +45,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         View mainActivity = findViewById(android.R.id.content);
         Button printButton = (Button)findViewById(R.id.printButton);
         printButton.setOnClickListener(this);
+        //adpt = new SimpleAdapter(new ArrayList<LabelModel>(), this);
         adpt = new SimpleAdapter(new ArrayList<LabelModel>(), this);
         this.printer = new BluetoothPrinter(this);
         this.list = (ListView) findViewById(R.id.listview);
-        this.list.setAdapter(adpt);
+        this.list.setAdapter(this.adpt);
+        this.adpt.setMode(Attributes.Mode.Single);
+
+
+
         Resources res = this.getResources();
         String ip = res.getString(R.string.piAddress);
         String port = res.getString(R.string.piPort);
@@ -61,8 +67,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         {
             for(LabelModel lm : this.adpt.getItemList()) {
                 if(lm.isChecked()) {
-                    Log.d("MainActivity", "Lancement impression : " + lm.getLabel() + " : " + lm.getProject() + " : " + lm.getYear());
-                    this.printer.print(lm);
+                    for(int i = 0; i < lm.getNbImpressions(); i++) {
+                        Log.d("MainActivity", "Lancement impression : " + lm.getLabel() + " : " + lm.getProject() + " : " + lm.getYear());
+                        this.printer.print(lm);
+                        try {
+                        } catch (Exception e) {
+                            Log.d("MainActivity", e.getMessage());
+                        }
+                    }
                 }
             }
         }
@@ -84,12 +96,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Resources res = this.getResources();
                 String ip = res.getString(R.string.piAddress);
                 String port = res.getString(R.string.piPort);
-                (new AsyncListViewLoader(this, adpt, mainActivity)).execute("http://" + ip + ":" + port + "/index.php/api/labelss");
+                (new AsyncListViewLoader(this, adpt, mainActivity)).execute("http://" + ip + ":" + port + "/index.php/api/labels");
                 return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
 }
 
 
