@@ -56,6 +56,42 @@ public class LabelModel implements Serializable {
      */
     private int currentFormat;
 
+
+    /**
+     * Constructeur
+     * accepte les données de l'échantillon
+     * @param label
+     *          nom de l'échantillon
+     * @param project
+     *          projet associé
+     * @param date
+     *          date de l'échantillon
+     */
+    public LabelModel(String label, String project, String date) {
+        super();
+        this.label = label;
+        this.project = project;
+        DateTimeFormatter format = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss");
+        DateTime time = null;
+        try {
+            time = format.parseDateTime(date);
+        } catch (IllegalArgumentException e) {
+            format = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss.SSS");
+            time = format.parseDateTime(date);
+        } finally {
+            this.year = "" + time.getYear();
+        }
+        this.nbImpressions = 0;
+        this.checked = false;
+        this.currentFormat = LabelModel.FORMAT_STANDARD;
+    }
+
+
+    /**
+     *
+     * GETTER AND SETTERS
+     *
+     */
     public CheckBox getCheckBox() {
         return checkBox;
     }
@@ -80,25 +116,6 @@ public class LabelModel implements Serializable {
         this.checked = checked;
     }
 
-    public LabelModel(String label, String project, String date) {
-        super();
-        this.label = label;
-        this.project = project;
-        DateTimeFormatter format = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss");
-        DateTime time = null;
-        try {
-            time = format.parseDateTime(date);
-        } catch (IllegalArgumentException e) {
-            format = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss.SSS");
-            time = format.parseDateTime(date);
-        } finally {
-            this.year = "" + time.getYear();
-        }
-        this.nbImpressions = 0;
-        this.checked = false;
-        this.currentFormat = LabelModel.FORMAT_STANDARD;
-    }
-
     public String getProject() {
         return this.project;
     }
@@ -119,18 +136,6 @@ public class LabelModel implements Serializable {
         return this.label;
     }
 
-    public void incrementImpressions() {
-        if(this.nbImpressions < 5) {
-            this.nbImpressions++;
-        }
-    }
-
-    public void decrementImpressions() {
-        if(this.nbImpressions > 1) {
-            this.nbImpressions--;
-        }
-    }
-
     public int getNbImpressions() {
         return this.nbImpressions;
     }
@@ -147,6 +152,29 @@ public class LabelModel implements Serializable {
         this.currentFormat = newFormat;
     }
 
+    /**
+     * methode incrementation du nb d'impression
+     * pour l'étiquette ciblée
+     */
+    public void incrementImpressions() {
+        if(this.nbImpressions < 5) {
+            this.nbImpressions++;
+        }
+    }
+
+    /**
+     * methode de decrementation du nb d'impression
+     */
+    public void decrementImpressions() {
+        if(this.nbImpressions > 1) {
+            this.nbImpressions--;
+        }
+    }
+
+    /**
+     * methode de réinitialisation des
+     * paramètres d'impressions de l'étiquette
+     */
     public void reset() {
         this.nbImpressions = 0;
         this.checked = false;

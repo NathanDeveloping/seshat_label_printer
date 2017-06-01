@@ -11,17 +11,34 @@ import java.net.ConnectException;
 import seshat.seshatlabel.R;
 import seshat.seshatlabel.models.LabelModel;
 
-
+/**
+ * Classe permettant l'impression
+ * des étiquettes
+ */
 public class BluetoothPrinter {
 
     private Context context;
+
+    /**
+     * Adresse MAC de l'imprimante
+     * à configurer dans res/config.xml
+     */
     private static String PRINTER_MAC_ADDRESS;
 
+    /**
+     * constructeur
+     * @param context
+     */
     public BluetoothPrinter(Context context) {
         this.context = context;
         BluetoothPrinter.PRINTER_MAC_ADDRESS = this.context.getResources().getString(R.string.printerMac);
     }
 
+    /**
+     * Permet l'impression en format standard
+     * @param labelModel
+     *          etiquette à imprimer
+     */
     public void print(final LabelModel labelModel) {
         Thread t = new Thread(new Runnable() {
             String label = labelModel.getLabel();
@@ -73,6 +90,12 @@ public class BluetoothPrinter {
         }
     }
 
+    /**
+     * Permet l'impression en petit format
+     * pour cryotube
+     * @param labelModel
+     *      etiquette à imprimer
+     */
     public void smallPrint(final LabelModel labelModel) {
         final String[] partitionedLabel = this.partitionLabel(labelModel.getLabel());
         new Thread(new Runnable() {
@@ -95,7 +118,7 @@ public class BluetoothPrinter {
                             "^CF0,28\n" +
                             "^FO140,27^FD" + labels[0] + "^FS\n" +
                             "^FO140,60^FD" + labels[1] + "^FS\n" +
-                            "^FO140,88^FD" + labels[2] + "^FS\n" +
+                            "^FO140,93^FD" + labels[2] + "^FS\n" +
                             "^FO20,10^BQN,2,4^FD" + label + "\n" +
                             "^XZ";
 
