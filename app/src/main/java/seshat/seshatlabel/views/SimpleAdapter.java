@@ -5,9 +5,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +19,7 @@ import com.daimajia.swipe.SwipeLayout;
 import com.daimajia.swipe.adapters.ArraySwipeAdapter;
 import com.daimajia.swipe.adapters.BaseSwipeAdapter;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -26,7 +30,7 @@ public class SimpleAdapter extends BaseSwipeAdapter {
 
     private Context mContext;
     public HashMap<String,String> checked = new HashMap<String,String>();
-    public List<LabelModel> itemList;
+    public List<LabelModel> itemList = new ArrayList<LabelModel>();
 
     public SimpleAdapter(List<LabelModel> itemList, Context mContext) {
         this.mContext = mContext;
@@ -47,6 +51,14 @@ public class SimpleAdapter extends BaseSwipeAdapter {
             public void onOpen(SwipeLayout layout) {
             }
         });
+        /**
+         * Spinner de choix de format
+         */
+        Spinner spinner = (Spinner) v.findViewById(R.id.printFormat_spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this.mContext,
+                R.array.printFormat, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
         return v;
     }
 
@@ -104,11 +116,35 @@ public class SimpleAdapter extends BaseSwipeAdapter {
                 this.inst.notifyDataSetChanged();
             }
         });
+        Spinner spinner = (Spinner) v.findViewById(R.id.printFormat_spinner);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String itemSelected = adapterView.getItemAtPosition(i).toString();
+                int itemSelectedFormat = LabelModel.FORMAT_STANDARD;
+                switch (itemSelected) {
+                    case "Standard" :
+                        break;
+                    case "Cryotube" :
+                        itemSelectedFormat = LabelModel.FORMAT_CRYOTUBE;
+                }
+                c.setCurrentFormat(itemSelectedFormat);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
 
     @Override
     public int getCount() {
-        return this.itemList.size();
+        if(this.itemList != null) {
+            return this.itemList.size();
+        } else {
+            return 0;
+        }
     }
 
     @Override
@@ -127,5 +163,13 @@ public class SimpleAdapter extends BaseSwipeAdapter {
 
     public void setItemList(List<LabelModel> itemList) {
         this.itemList = itemList;
+    }
+
+    public void reset() {
+        if(this.itemList != null) {
+            for(int i = 0; i < this.itemList.size(); i++) {
+                this.itemList.get(i).reset();
+            }
+        }
     }
 }

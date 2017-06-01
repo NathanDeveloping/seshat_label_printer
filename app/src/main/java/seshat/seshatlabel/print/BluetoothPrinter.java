@@ -27,6 +27,7 @@ public class BluetoothPrinter {
             String label = labelModel.getLabel();
             String project = labelModel.getProject().toUpperCase();
             String year = labelModel.getYear();
+
             public void run() {
                 try {
                     // Instantiate insecure connection for given Bluetooth&reg; MAC Address.
@@ -73,10 +74,11 @@ public class BluetoothPrinter {
     }
 
     public void smallPrint(final LabelModel labelModel) {
+        final String[] partitionedLabel = this.partitionLabel(labelModel.getLabel());
         new Thread(new Runnable() {
             String label = labelModel.getLabel();
-            String project = labelModel.getProject().toUpperCase();
-            String year = labelModel.getYear();
+            String[] labels = partitionedLabel;
+
             public void run() {
                 try {
                     // Instantiate insecure connection for given Bluetooth&reg; MAC Address.
@@ -90,11 +92,10 @@ public class BluetoothPrinter {
 
                     // This example prints "This is a ZPL test." near the top of the label.
                     String zplData = "^XA\n" +
-                            "^CF0,35\n" +
-                            "^FO140,30^FD" + label + "^FS\n" +
-                            "^CF0,25\n" +
-                            "^FO140,55^FD" + year + "^FS\n" +
-                            "^FO140,80^FD" + project + "^FS\n" +
+                            "^CF0,28\n" +
+                            "^FO140,27^FD" + labels[0] + "^FS\n" +
+                            "^FO140,60^FD" + labels[1] + "^FS\n" +
+                            "^FO140,88^FD" + labels[2] + "^FS\n" +
                             "^FO20,10^BQN,2,4^FD" + label + "\n" +
                             "^XZ";
 
@@ -114,5 +115,14 @@ public class BluetoothPrinter {
                 }
             }
         }).start();
+    }
+
+    public String[] partitionLabel(String label) {
+        String[] splittedLabel = label.split("_");
+        String[] res = new String[3];
+        res[0] = splittedLabel[0];
+        res[1] = splittedLabel[1];
+        res[2] = label.replace(splittedLabel[0] + "_" + splittedLabel[1] + "_", "");
+        return res;
     }
 }

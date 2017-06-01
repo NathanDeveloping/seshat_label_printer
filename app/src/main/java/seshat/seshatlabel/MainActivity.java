@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Spinner;
 
 
 import com.daimajia.swipe.SwipeLayout;
@@ -51,9 +52,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.list = (ListView) findViewById(R.id.listview);
         this.list.setAdapter(this.adpt);
         this.adpt.setMode(Attributes.Mode.Single);
-
-
-
         Resources res = this.getResources();
         String ip = res.getString(R.string.piAddress);
         String port = res.getString(R.string.piPort);
@@ -69,14 +67,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(lm.isChecked()) {
                     for(int i = 0; i < lm.getNbImpressions(); i++) {
                         Log.d("MainActivity", "Lancement impression : " + lm.getLabel() + " : " + lm.getProject() + " : " + lm.getYear());
-                        this.printer.print(lm);
-                        try {
-                        } catch (Exception e) {
-                            Log.d("MainActivity", e.getMessage());
+                        if(lm.getCurrentFormat() == LabelModel.FORMAT_STANDARD) {
+                            this.printer.print(lm);
+                        } else {
+                            this.printer.smallPrint(lm);
                         }
                     }
+                    lm.reset();
                 }
             }
+            this.adpt.notifyDataSetChanged();
         }
         return;
     }

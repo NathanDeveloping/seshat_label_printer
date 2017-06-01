@@ -13,14 +13,48 @@ import java.io.Serializable;
 /**
  * Modèle représentant une étiquette
  * avec ses données
+ * ainsi qu'un item de la ListView
  */
 public class LabelModel implements Serializable {
 
+    /**
+     * informations de l'échantillon
+     * nom de l'échantillon
+     * projet de l'échantillon
+     * année
+     */
     private String label, project, year;
+
+    /**
+     * selectionné ou non
+     */
     private boolean checked;
+
+    /**
+     * Checkbox associée
+     */
     private CheckBox checkBox;
+
+    /**
+     * TextView associée
+     */
     private TextView textView;
+
+    /**
+     * Nombre d'impressions selectionné
+     */
     private int nbImpressions;
+
+    /**
+     * identifiants format d'impressions de l'etiquette
+     */
+    public final static int FORMAT_STANDARD = 1;
+    public final static int FORMAT_CRYOTUBE = 2;
+
+    /**
+     * format actuel d'impression de l'etiquette
+     */
+    private int currentFormat;
 
     public CheckBox getCheckBox() {
         return checkBox;
@@ -61,7 +95,8 @@ public class LabelModel implements Serializable {
             this.year = "" + time.getYear();
         }
         this.nbImpressions = 0;
-
+        this.checked = false;
+        this.currentFormat = LabelModel.FORMAT_STANDARD;
     }
 
     public String getProject() {
@@ -103,4 +138,20 @@ public class LabelModel implements Serializable {
     public void setNbImpressions(int nb) {
         this.nbImpressions = nb;
     }
+
+    public int getCurrentFormat() {
+        return this.currentFormat;
+    }
+
+    public void setCurrentFormat(int newFormat) {
+        this.currentFormat = newFormat;
+    }
+
+    public void reset() {
+        this.nbImpressions = 0;
+        this.checked = false;
+        if(this.checkBox != null) this.checkBox.setChecked(false);
+        this.setCurrentFormat(LabelModel.FORMAT_STANDARD);
+    }
+
 }

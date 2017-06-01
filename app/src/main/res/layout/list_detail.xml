@@ -12,6 +12,15 @@
         android:orientation="horizontal"
         android:weightSum="1">
         <!--What you want to show-->
+
+        <Spinner
+            android:id="@+id/printFormat_spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1" />
+
         <Button
             android:id="@+id/moins"
             android:layout_width="56dp"
