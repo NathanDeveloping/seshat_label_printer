@@ -1,5 +1,6 @@
 package seshat.seshatlabel;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,13 +11,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 
 import com.daimajia.swipe.SwipeLayout;
 import com.daimajia.swipe.util.Attributes;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
+import seshat.seshatlabel.models.Configuration;
 import seshat.seshatlabel.models.LabelModel;
 import seshat.seshatlabel.print.BluetoothPrinter;
 import seshat.seshatlabel.views.AsyncListViewLoader;
@@ -33,6 +38,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ListView list;
 
     private BluetoothPrinter printer;
+
+    private int compteurHiddenConfigLayout;
+
+    private long initTime;
+
+    private int currentState;
+
+    public final static int STATE_RPI = 1;
+    public final static int STATE_BACKUP = 2;
 
     /**
      * Methode lancée à l'ouverture de l'app
@@ -52,11 +66,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.list = (ListView) findViewById(R.id.listview);
         this.list.setAdapter(this.adpt);
         this.adpt.setMode(Attributes.Mode.Single);
+        this.compteurHiddenConfigLayout = 0;
         Resources res = this.getResources();
-        String ip = res.getString(R.string.piAddress);
-        String port = res.getString(R.string.piPort);
+        Configuration config = Configuration.getInstance();
+        config.setContext(this);
+        config.setDefault(res.getString(R.string.printerMac), res.getString(R.string.piAddress), res.getString(R.string.piPort), res.getString(R.string.backupIp), res.getString(R.string.backupPort));
         // Exec async load task
-        (new AsyncListViewLoader(this, adpt, mainActivity)).execute("http://" + ip + ":" + port + "/index.php/api/labels");
+        Log.d("MainActivity", "IP : " + config.getRpiIP() + " PORT : " + config.getRpiPORT());
+        this.currentState = MainActivity.STATE_RPI;
+        (new AsyncListViewLoader(this, adpt, mainActivity)).execute("http://" + config.getRpiIP() + ":" + config.getRpiPORT() + "/index.php/api/labels");
     }
 
     public void onClick(View v)
@@ -92,11 +110,45 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.action_refresh:
+                this.compteurHiddenConfigLayout++;
+                Log.d("MainActivity", "Compteur : " + this.compteurHiddenConfigLayout);
+                if(this.compteurHiddenConfigLayout >= 10) {
+                    long currentTime = System.nanoTime() ;
+                    Log.d("MainActivity", "temps : " + (currentTime - this.initTime) / 1000000000);
+                    if(((currentTime - this.initTime) / 1000000000) <= 3) {
+                        Log.d("MainActivity", "Menu caché à afficher !");
+                        Intent intent = new Intent(MainActivity.this, ConfigActivity.class);
+                        startActivity(intent);
+                    }
+                    this.compteurHiddenConfigLayout = 0;
+                } else if (this.compteurHiddenConfigLayout == 1) {
+                    this.initTime = System.nanoTime() ;
+                }
                 View mainActivity = findViewById(android.R.id.content);
-                Resources res = this.getResources();
-                String ip = res.getString(R.string.piAddress);
-                String port = res.getString(R.string.piPort);
-                (new AsyncListViewLoader(this, adpt, mainActivity)).execute("http://" + ip + ":" + port + "/index.php/api/labels");
+                Configuration config = Configuration.getInstance();
+                if(this.currentState == MainActivity.STATE_RPI) {
+                    Log.d("MainActivity", "IP : " + config.getRpiIP() + " PORT : " + config.getRpiPORT());
+                    (new AsyncListViewLoader(this, adpt, mainActivity)).execute("http://" + config.getRpiIP() + ":" + config.getRpiPORT() + "/index.php/api/labels");
+                } else if (this.currentState == MainActivity.STATE_BACKUP) {
+                    Log.d("MainActivity", "IP : " + config.getBackupIP() + " PORT : " + config.getBackupPORT());
+                    (new AsyncListViewLoader(this, adpt, mainActivity)).execute("http://" + config.getBackupIP() + ":" + config.getBackupPORT() + "/index.php/api/labels");
+                }
+                return true;
+            case R.id.action_download :
+                TextView label = (TextView) findViewById(R.id.titreEtiquette);
+                label.setText("Anciennes étiquettes");
+                mainActivity = findViewById(android.R.id.content);
+                config = Configuration.getInstance();
+                Log.d("MainActivity", "IP : " + config.getBackupIP() + " PORT : " + config.getBackupPORT());
+                (new AsyncListViewLoader(this, adpt, mainActivity)).execute("http://" + config.getBackupIP() + ":" + config.getBackupPORT() + "/index.php/api/labels");
+                return true;
+            case R.id.action_home :
+                label = (TextView) findViewById(R.id.titreEtiquette);
+                label.setText("Nouvelles étiquettes");
+                mainActivity = findViewById(android.R.id.content);
+                config = Configuration.getInstance();
+                Log.d("MainActivity", "IP : " + config.getRpiIP() + " PORT : " + config.getRpiPORT());
+                (new AsyncListViewLoader(this, adpt, mainActivity)).execute("http://" + config.getRpiIP() + ":" + config.getRpiPORT() + "/index.php/api/labels");
                 return true;
         }
 

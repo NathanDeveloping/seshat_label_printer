@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingBottom="50dp"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:paddingTop="50dp">
+
+    <TextView
+        android:id="@+id/printerMACLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PRINTER MAC :" />
+
+    <EditText
+        android:id="@+id/printerMACEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/raspberryIpLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RASPBERRY IP :" />
+
+    <EditText
+        android:id="@+id/raspberryIpEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/raspberryPortLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RASPBERRY PORT:" />
+
+    <EditText
+        android:id="@+id/raspberryPortEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/backupIpLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BACKUP DB PORT:" />
+
+    <EditText
+        android:id="@+id/backupIpEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/backupPortLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BACKUP DB PORT:" />
+
+    <EditText
+        android:id="@+id/backupPortEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enregistrer" />
+
+</LinearLayout>

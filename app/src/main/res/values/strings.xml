@@ -2,4 +2,7 @@
     <string name="app_name">SeshatLabel</string>
     <string name="no_connect">Impossible de se connecter au Raspberry, veuillez vérifier que vous êtes bien connecté au wifi AGGREGATE_RPI3.</string>
     <string name="refresh">Rafraîchir</string>
+    <string name="home">Accueil</string>
+    <string name="download">Télécharger</string>
+    <string name="title_activity_config_display">Configuration</string>
 </resources>
