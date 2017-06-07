@@ -9,6 +9,7 @@ import com.zebra.sdk.comm.Connection;
 import java.net.ConnectException;
 
 import seshat.seshatlabel.R;
+import seshat.seshatlabel.models.Configuration;
 import seshat.seshatlabel.models.LabelModel;
 
 /**
@@ -44,7 +45,9 @@ public class BluetoothPrinter {
             String label = labelModel.getLabel();
             String project = labelModel.getProject().toUpperCase();
             String year = labelModel.getYear();
-
+            Configuration config = Configuration.getInstance();
+            String qrURL = config.getqrURL();
+            String URL = qrURL.replace("{label}", label);
             public void run() {
                 try {
                     // Instantiate insecure connection for given Bluetooth&reg; MAC Address.
@@ -55,7 +58,15 @@ public class BluetoothPrinter {
 
                     // Open the connection - physical connection is established here.
                     thePrinterConn.open();
-
+                    Configuration config = Configuration.getInstance();
+                    String qrURL = config.getqrURL();
+                    String URL = label;
+                    if(qrURL != null) {
+                        if(qrURL != "") {
+                            URL = qrURL.replace("{label}", label);
+                        }
+                    }
+                    Log.d("BluetoothPrinter", "URL == " + URL);
                     // This example prints "This is a ZPL test." near the top of the label.
                     String zplData = "^XA\n" +
                             "^CF0,32\n" +
@@ -63,7 +74,7 @@ public class BluetoothPrinter {
                             "^CF0,32\n" +
                             "^FO210,105^FD" + year + "^FS\n" +
                             "^FO210,160^FD" + project + "^FS\n" +
-                            "^FO40,30^BQN,2,6^FD" + label + "\n" +
+                            "^FO40,30^BQN,2,6^FD" + URL + "\n" +
                             "^XZ";
 
                     // Send the data to printer as a byte array.
@@ -102,6 +113,7 @@ public class BluetoothPrinter {
             String label = labelModel.getLabel();
             String[] labels = partitionedLabel;
 
+
             public void run() {
                 try {
                     // Instantiate insecure connection for given Bluetooth&reg; MAC Address.
@@ -112,14 +124,22 @@ public class BluetoothPrinter {
 
                     // Open the connection - physical connection is established here.
                     thePrinterConn.open();
-
+                    Configuration config = Configuration.getInstance();
+                    String qrURL = config.getqrURL();
+                    String URL = label;
+                    if(qrURL != null ) {
+                        if(qrURL != "") {
+                            URL = qrURL.replace("{label}", label);
+                        }
+                    }
+                    Log.d("BluetoothPrinter", "URL == " + URL);
                     // This example prints "This is a ZPL test." near the top of the label.
                     String zplData = "^XA\n" +
                             "^CF0,28\n" +
                             "^FO140,27^FD" + labels[0] + "^FS\n" +
                             "^FO140,60^FD" + labels[1] + "^FS\n" +
                             "^FO140,93^FD" + labels[2] + "^FS\n" +
-                            "^FO20,10^BQN,2,4^FD" + label + "\n" +
+                            "^FO20,10^BQN,2,4^FD" + URL + "\n" +
                             "^XZ";
 
                     // Send the data to printer as a byte array.

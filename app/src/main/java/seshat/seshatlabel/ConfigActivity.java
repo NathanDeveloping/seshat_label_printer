@@ -23,11 +23,13 @@ public class ConfigActivity extends Activity implements View.OnClickListener{
         EditText rpiPORT = (EditText)this.findViewById(R.id.raspberryPortEdit);
         EditText backupIP = (EditText)this.findViewById(R.id.backupIpEdit);
         EditText backupPORT = (EditText)this.findViewById(R.id.backupPortEdit);
+        EditText qrLabel = (EditText)this.findViewById(R.id.qrLabelEdit);
         printerMAC.setText(config.getPrinterMAC());
         rpiIP.setText(config.getRpiIP());
         rpiPORT.setText(config.getRpiPORT());
         backupIP.setText(config.getBackupIP());
         backupPORT.setText(config.getBackupPORT());
+        qrLabel.setText(config.getqrURL());
         Button saveButton = (Button)findViewById(R.id.saveButton);
         saveButton.setOnClickListener(this);
     }
@@ -42,11 +44,13 @@ public class ConfigActivity extends Activity implements View.OnClickListener{
             EditText rpiPORT = (EditText)this.findViewById(R.id.raspberryPortEdit);
             EditText backupIP = (EditText)this.findViewById(R.id.backupIpEdit);
             EditText backupPORT = (EditText)this.findViewById(R.id.backupPortEdit);
+            EditText qrLabel = (EditText)this.findViewById(R.id.qrLabelEdit);
             config.setPrinterMAC(printerMAC.getText().toString());
             config.setRpiIP(rpiIP.getText().toString());
             config.setRpiPORT(rpiPORT.getText().toString());
             config.setBackupIP(backupIP.getText().toString());
             config.setBackupPORT(backupPORT.getText().toString());
+            config.setqrURL(qrLabel.getText().toString());
             Log.d("ConfigActivity", "Retour home...");
             this.finish();
         }

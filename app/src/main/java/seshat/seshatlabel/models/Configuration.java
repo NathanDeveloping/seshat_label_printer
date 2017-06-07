@@ -89,6 +89,18 @@ public class Configuration {
         editor.commit();
     }
 
+    public String getqrURL() {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        return preferences.getString("qrURL", null);
+    }
+
+    public void setqrURL(String qrURL) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("qrURL", qrURL);
+        editor.commit();
+    }
+
     public void setDefault(String printerMAC, String rpiIP, String rpiPORT, String backupIP, String backupPORT) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         if((preferences.getString("printerMAC", null) == null) || (preferences.getString("rpiIP", null) == null) ||
@@ -102,6 +114,7 @@ public class Configuration {
             editor.putString("rpiPORT", rpiPORT);
             editor.putString("backupIP", backupIP);
             editor.putString("backupPORT", backupPORT);
+            editor.putString("qrURL", null);
             editor.commit();
         }
     }

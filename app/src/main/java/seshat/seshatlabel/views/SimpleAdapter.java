@@ -115,6 +115,7 @@ public class SimpleAdapter extends BaseSwipeAdapter {
         text.setText(c.getLabel());
 
         final CheckBox checkBox = (CheckBox) v.findViewById(R.id.checkBox);
+        checkBox.setChecked(c.isChecked());
         final Button moins = (Button)v.findViewById(R.id.moins);
         final Button plus = (Button)v.findViewById(R.id.plus);
         final SimpleAdapter instance = this;
@@ -154,6 +155,8 @@ public class SimpleAdapter extends BaseSwipeAdapter {
             }
         });
         Spinner spinner = (Spinner) v.findViewById(R.id.printFormat_spinner);
+        spinner.setSelection(c.getCurrentFormat() - 1);
+        this.notifyDataSetChanged();
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -212,5 +215,6 @@ public class SimpleAdapter extends BaseSwipeAdapter {
                 this.itemList.get(i).reset();
             }
         }
+        this.notifyDataSetChanged();
     }
 }
