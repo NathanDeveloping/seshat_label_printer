@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+
 import seshat.seshatlabel.R;
 import seshat.seshatlabel.models.LabelModel;
 
@@ -152,10 +153,11 @@ public class SimpleAdapter extends BaseSwipeAdapter {
             public void onClick(View view) {
                 c.incrementImpressions();
                 this.inst.notifyDataSetChanged();
+
             }
         });
         Spinner spinner = (Spinner) v.findViewById(R.id.printFormat_spinner);
-        spinner.setSelection(c.getCurrentFormat() - 1);
+       // spinner.setSelection(c.getCurrentFormat() - 1);
         this.notifyDataSetChanged();
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

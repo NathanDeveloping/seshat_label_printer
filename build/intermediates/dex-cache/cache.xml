@@ -2,184 +2,319 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="/home/otelo/Bureau/depots/seshatlabelprinter/app/libs/commons-validator-1.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="42fa1046955ade59f5354a1876cfc523cea33815">
-        <dex dex="/home/otelo/Bureau/depots/seshatlabelprinter/app/build/intermediates/pre-dexed/debug/commons-validator-1.4.0_06e83a5fa9fc539d14a6ae0b5097881b72a494bb.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/otelo/Bureau/depots/seshatlabelprinter/app/libs/ZSDK_ANDROID_API.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="73fd718c8a972e249a06ada2e207bfa2a0f5a7ef">
-        <dex dex="/home/otelo/Bureau/depots/seshatlabelprinter/app/build/intermediates/pre-dexed/debug/ZSDK_ANDROID_API_f389fc279bfdb86be61515cf4536cf68e9954575.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/root/.android/build-cache/e91b570a30b55495220e7966e4e9e3a5b5884ae7/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
-        <dex dex="/home/otelo/Bureau/depots/seshatlabelprinter/app/build/intermediates/pre-dexed/debug/classes_a42ca0536b461c0c1b3d87407d45adb055a176b7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/otelo/Bureau/depots/seshatlabelprinter/app/libs/commons-lang3-3.4.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="5fe28b9518e58819180a43a850fbc0dd24b7c050">
-        <dex dex="/home/otelo/Bureau/depots/seshatlabelprinter/app/build/intermediates/pre-dexed/debug/commons-lang3-3.4_89ee6e6d178fb741d8eaead63ffd36dd86da61ac.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/otelo/Bureau/depots/seshatlabelprinter/app/libs/opencsv-2.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="f1231104847b1132a07c54c7db8a823ef7923f7c">
-        <dex dex="/home/otelo/Bureau/depots/seshatlabelprinter/app/build/intermediates/pre-dexed/debug/opencsv-2.2_e03ba9163967e14441f128f6099c9d0b9dc6314a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/otelo/Bureau/depots/seshatlabelprinter/app/libs/jackson-databind-2.2.3.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/var/www/html/seshat_label_printer/app/libs/jackson-databind-2.2.3.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.3"
         sha1="03ae380888029daefb91d3ecdca3a37d8cb92bc9">
-        <dex dex="/home/otelo/Bureau/depots/seshatlabelprinter/app/build/intermediates/pre-dexed/debug/jackson-databind-2.2.3_b851b0fdf4276422372694a77557aac64a551595.jar" />
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/2/jackson-databind-2.2.3_0c5f682950dc331471d42ffad6c7f749fa751781/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/otelo/Bureau/depots/seshatlabelprinter/app/libs/pkix-1.53.0.0.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/home/profil/guiot1/.android/build-cache/b75167961bd9b6847e8eddd48607f5f2054ba89b/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="340c75534d964f468d82ed42006a7255362046c7">
-        <dex dex="/home/otelo/Bureau/depots/seshatlabelprinter/app/build/intermediates/pre-dexed/debug/pkix-1.53.0.0_9ba6eac157e82678f0e086e8911f1f5209060096.jar" />
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f2988a504a9611063c291dd547fa2da22529f894/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/root/.gradle/caches/modules-2/files-2.1/joda-time/joda-time/2.9.4/1c295b462f16702ebe720bbb08f62e1ba80da41b/joda-time-2.9.4.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/home/profil/guiot1/.android/build-cache/526bd24f874767d8f3a5dd5767ab6a0305a9cff9/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="1c295b462f16702ebe720bbb08f62e1ba80da41b">
-        <dex dex="/home/otelo/Bureau/depots/seshatlabelprinter/app/build/intermediates/pre-dexed/debug/joda-time-2.9.4_2e70e003c1e058dbd87a1f5bf374be37b79004c9.jar" />
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b975ec62377385de8cf3b9c0402c7a2a0be389e1/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/otelo/Bureau/depots/seshatlabelprinter/app/libs/httpmime-4.3.2.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/var/www/html/seshat_label_printer/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="3202421d9425ced69919b282afa644e7ef0e8fef">
-        <dex dex="/home/otelo/Bureau/depots/seshatlabelprinter/app/build/intermediates/pre-dexed/debug/httpmime-4.3.2_be43483c11df1ad5605f776633585c9e2a2815a8.jar" />
+        sha1="1c3a8374910091827a4eddbebc7d6b983ea331a6">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_5a44300e1a635432da6e69b47341770db22c3929/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/otelo/Bureau/depots/seshatlabelprinter/app/libs/prov-1.53.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="72c4892e05c7563fbab0c4ada0187cd879113389">
-        <dex dex="/home/otelo/Bureau/depots/seshatlabelprinter/app/build/intermediates/pre-dexed/debug/prov-1.53.0.0_eca44d4a9b9e940af2a127050d1d3ceda9d7ab18.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/otelo/Bureau/depots/seshatlabelprinter/app/libs/httpcore-4.3.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="98e2eefcf524f757188f172642ecf5e2c7421947">
-        <dex dex="/home/otelo/Bureau/depots/seshatlabelprinter/app/build/intermediates/pre-dexed/debug/httpcore-4.3.1_89c1c805c5f5b4e793daf9ff4a700437dec48448.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/root/.android/build-cache/1af5dc3c67c15e4bd313d049c8eaa101cf74dec8/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="95519720620b553f63afc789beba9ad582807f7c">
-        <dex dex="/home/otelo/Bureau/depots/seshatlabelprinter/app/build/intermediates/pre-dexed/debug/classes_d1607f313fe51bde9c09f5549840f58eaebec8f7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/otelo/Bureau/depots/seshatlabelprinter/app/libs/commons-io-2.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="83b5b8a7ba1c08f9e8c8ff2373724e33d3c1e22a">
-        <dex dex="/home/otelo/Bureau/depots/seshatlabelprinter/app/build/intermediates/pre-dexed/debug/commons-io-2.2_e48431dfff5867b6c99eb95559d55d3019bb4066.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/root/.android/build-cache/de39cbd65e91a95d14d5a74ab5be1df38e43f1b8/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="e84b30031d4bab89a2b5c45af4eb9213828524dd">
-        <dex dex="/home/otelo/Bureau/depots/seshatlabelprinter/app/build/intermediates/pre-dexed/debug/classes_f9f18f5750bb878adbc8d4fda0cc5132f69dda15.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/otelo/Bureau/depots/seshatlabelprinter/app/libs/commons-net-3.1.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/var/www/html/seshat_label_printer/app/libs/commons-net-3.1.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.3"
         sha1="2298164a7c2484406f2aa5ac85b205d39019896f">
-        <dex dex="/home/otelo/Bureau/depots/seshatlabelprinter/app/build/intermediates/pre-dexed/debug/commons-net-3.1_be026ee084d05c2bca09747664d263340125013d.jar" />
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/2/commons-net-3.1_bc11a7bcbccecf7f9ce9845e7fb1076aafc627b1/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/otelo/Bureau/depots/seshatlabelprinter/app/libs/jackson-core-2.2.3.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="1a0113da2cab5f4c216b4e5e7c1dbfaa67087e14">
-        <dex dex="/home/otelo/Bureau/depots/seshatlabelprinter/app/build/intermediates/pre-dexed/debug/jackson-core-2.2.3_3eb0f6cc5ed5d4d0c35c93e735648b192b61bda8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/otelo/Bureau/depots/seshatlabelprinter/app/libs/core-1.53.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="619f704791db186304325bd129b2e7ec34f77438">
-        <dex dex="/home/otelo/Bureau/depots/seshatlabelprinter/app/build/intermediates/pre-dexed/debug/core-1.53.0.0_588fe925ab23061908518f58473169bb2c4caf59.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/otelo/Bureau/depots/seshatlabelprinter/app/libs/jackson-annotations-2.2.3.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="0527fece4f23a457070a36c371a26d6c0208e1c3">
-        <dex dex="/home/otelo/Bureau/depots/seshatlabelprinter/app/build/intermediates/pre-dexed/debug/jackson-annotations-2.2.3_432aed982b839eed62d9b766fabd2a5f440216c9.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/otelo/Bureau/depots/seshatlabelprinter/app/libs/snmp6_1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="0bca89e1d2d15cd384cc8aa6cef9940fb9ad6469">
-        <dex dex="/home/otelo/Bureau/depots/seshatlabelprinter/app/build/intermediates/pre-dexed/debug/snmp6_1_60a03f1b4463637ed94dfb992c3016a57155891a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/root/.android/build-cache/1aa2f3c8ca62ad3011148a27495775151039f7e5/output/jars/classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/home/profil/guiot1/.android/build-cache/3acebd11aaed42c890b4b3bcedb2f18bd4f1ab88/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.3"
         sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
-        <dex dex="/home/otelo/Bureau/depots/seshatlabelprinter/app/build/intermediates/pre-dexed/debug/classes_8058b94447c8ed1c8baf72a539a4fb7025da309f.jar" />
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2acd3bcdb35904c16b7dfb45878bc47361c6756c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/profil/guiot1/.android/build-cache/e47471822aa3ee5c54b61a6829b6106d188e09a2/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f1cf9a712184cb9f9a458017686159fec6ef79b7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/var/www/html/seshat_label_printer/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_26258a0d9c278b4c879f039c5f4be2e59f539d96/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/profil/guiot1/.android/build-cache/ef4e8d9ae757b467812e8923bc0f81279051adb1/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_30ba28279b34941a6a9597c27ac93d50a3c1fe64/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/profil/guiot1/.android/build-cache/5e1aa889febee5df1906e10a5d64fa5505b5f295/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a9b79910bf89dff09fb5281d34a3bab550e059c4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/profil/guiot1/.android/build-cache/f8148287366ea444fff93918d8df1ed1cb0e784e/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4c64cc09b9b49c54633f8db25feade1642c7d0a5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/var/www/html/seshat_label_printer/app/libs/snmp6_1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="0bca89e1d2d15cd384cc8aa6cef9940fb9ad6469">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/2/snmp6_1_de784837e906c24ce22ba4e90cf3bb7f9d7daa88/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/profil/guiot1/.android/build-cache/1bb49f211a7f3969b498b9b367795dc46f3bac2a/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_0ccc82cfe15fcc9eb3bcb096da89e25027f1e038/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/var/www/html/seshat_label_printer/app/libs/httpmime-4.3.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3202421d9425ced69919b282afa644e7ef0e8fef">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/2/httpmime-4.3.2_b36c150872d64889484fdd067cbae1cca5894284/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/profil/guiot1/.android/build-cache/99d556b5b82fc439cce7d65e82972ce8c057dfaa/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_654fb660295047d740c95083abd5fa9d8bd509cf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/profil/guiot1/.android/build-cache/bab7a6894082e9155cbc16436879fb9160dc1a76/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9009b4866d5c6fe5f2d251b38e393be36e1f519f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/var/www/html/seshat_label_printer/app/libs/commons-io-2.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="83b5b8a7ba1c08f9e8c8ff2373724e33d3c1e22a">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/2/commons-io-2.2_7f0e82ab9cafa73c9f3c06c98e813074c47a1dd7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/var/www/html/seshat_label_printer/app/libs/jackson-annotations-2.2.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="0527fece4f23a457070a36c371a26d6c0208e1c3">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/2/jackson-annotations-2.2.3_6b72cbd85297abfef1aa7bf6e9df939b1a8af28c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/var/www/html/seshat_label_printer/app/libs/httpcore-4.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="98e2eefcf524f757188f172642ecf5e2c7421947">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/2/httpcore-4.3.1_a7e14aced774f7a88554dc4758d07f592584648c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/var/www/html/seshat_label_printer/app/libs/jackson-core-2.2.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="1a0113da2cab5f4c216b4e5e7c1dbfaa67087e14">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/2/jackson-core-2.2.3_52f4631db1dad7feac4857fd349cf9e174839d83/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/profil/guiot1/.android/build-cache/30cf0cf518ee131c6a05232c871ccf2ff31ba881/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e84b30031d4bab89a2b5c45af4eb9213828524dd">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_81e7515c320c575ec19aa60373dbcbcd211ffcb2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/profil/guiot1/.android/build-cache/280704e2ebeca1e29fb9664fb923f040a0df5d6a/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_935680b1b8bcbbf2d62517991aff850ee53e6651/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/var/www/html/seshat_label_printer/app/libs/prov-1.53.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="72c4892e05c7563fbab0c4ada0187cd879113389">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/2/prov-1.53.0.0_c4f7f87a32f3d03d12a69258161e10b038cf0c8d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/profil/guiot1/.android/build-cache/1cb6a01eaf6ab47691aaeeccaf071eebbfa41300/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_30faa00395a49ad4d09cc1eafaba8acfebcf823f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/var/www/html/seshat_label_printer/app/libs/commons-lang3-3.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="5fe28b9518e58819180a43a850fbc0dd24b7c050">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/2/commons-lang3-3.4_5f16fada3792f8df83656d887205026bd41e6c87/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/profil/guiot1/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.3.1_868d429d35120a85c48310246aa6f1551e6b5ee7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/var/www/html/seshat_label_printer/app/libs/commons-validator-1.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="42fa1046955ade59f5354a1876cfc523cea33815">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/2/commons-validator-1.4.0_838d3d9e1602751225a5e7d4ff24c7624f82b7c6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/profil/guiot1/.gradle/caches/modules-2/files-2.1/joda-time/joda-time/2.9.4/1c295b462f16702ebe720bbb08f62e1ba80da41b/joda-time-2.9.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="1c295b462f16702ebe720bbb08f62e1ba80da41b">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/10/joda-time-2.9.4_e7c5b4096809c2d8d7c32bf35f5bd3bf73fb017a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/var/www/html/seshat_label_printer/app/libs/ZSDK_ANDROID_API.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="73fd718c8a972e249a06ada2e207bfa2a0f5a7ef">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/2/ZSDK_ANDROID_API_0fb230fcd374da7baa0932120c3fb0a76bb8ef50/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/profil/guiot1/Android/Sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.2_bdbb8edb723856c31c4504e2bcc672fa2a9df22a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/profil/guiot1/.android/build-cache/7191965f2f12c4d21757c39cd3f6fa81f8a57d7d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_7e78ad8cdb6f85dbc41196a2c8c3454976567183/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/var/www/html/seshat_label_printer/app/libs/opencsv-2.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f1231104847b1132a07c54c7db8a823ef7923f7c">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/2/opencsv-2.2_7ccbef9e47862bec138a4d7e5558ffe9ab9c94e4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/var/www/html/seshat_label_printer/app/libs/pkix-1.53.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="340c75534d964f468d82ed42006a7255362046c7">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/2/pkix-1.53.0.0_bd4241109816c163d9c2db36fefb8455ad271fdc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/var/www/html/seshat_label_printer/app/libs/core-1.53.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="619f704791db186304325bd129b2e7ec34f77438">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/2/core-1.53.0.0_76fafb1afd64f880e5773f7a26fbd89225e2c8d8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/profil/guiot1/.android/build-cache/fd5bd33cf39ce44e82ee521f7039cc799ba3fd8a/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="/var/www/html/seshat_label_printer/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_855997b2cacacc628d700ec9f64a34b2aaefd59f/classes.dex" />
     </item>
 
 </items>

@@ -61,20 +61,32 @@ public class BluetoothPrinter {
                     Configuration config = Configuration.getInstance();
                     String qrURL = config.getqrURL();
                     String URL = label;
-                    if(qrURL != null) {
-                        if(qrURL != "") {
-                            URL = qrURL.replace("{label}", label);
+                    if (qrURL != null) {
+                        if (qrURL != "") {
+                            URL = "   "+qrURL.replace("{label}", label);
                         }
                     }
                     Log.d("BluetoothPrinter", "URL == " + URL);
                     // This example prints "This is a ZPL test." near the top of the label.
+                    String SizeofQR = null;
+                    if (URL.length() <= 20) {
+                        SizeofQR = "2,5";
+                    }
+                    if (URL.length() >=20 && URL.length() <= 50) {
+                        SizeofQR = "2,4";
+                    }
+                    if (URL.length() >= 50 && URL.length() <= 150) {
+                        SizeofQR = "2,3";
+                    }
+
+
                     String zplData = "^XA\n" +
                             "^CF0,32\n" +
                             "^FO210,50^FD" + label + "^FS\n" +
                             "^CF0,32\n" +
                             "^FO210,105^FD" + year + "^FS\n" +
                             "^FO210,160^FD" + project + "^FS\n" +
-                            "^FO40,30^BQN,2,6^FD" + URL + "\n" +
+                            "^FO40,30^BQN," + SizeofQR + "^FD" + URL + "\n" +
                             "^XZ";
 
                     // Send the data to printer as a byte array.
@@ -129,17 +141,20 @@ public class BluetoothPrinter {
                     String URL = label;
                     if(qrURL != null ) {
                         if(qrURL != "") {
-                            URL = qrURL.replace("{label}", label);
+                            URL = "   "+qrURL.replace("{label}", label);
                         }
                     }
                     Log.d("BluetoothPrinter", "URL == " + URL);
+                    String SizeofQR = "2,2";
+
+
                     // This example prints "This is a ZPL test." near the top of the label.
                     String zplData = "^XA\n" +
                             "^CF0,28\n" +
                             "^FO140,27^FD" + labels[0] + "^FS\n" +
                             "^FO140,60^FD" + labels[1] + "^FS\n" +
                             "^FO140,93^FD" + labels[2] + "^FS\n" +
-                            "^FO20,10^BQN,2,4^FD" + URL + "\n" +
+                            "^FO5,18^BQN,2,4^FD" + URL + "\n" +
                             "^XZ";
 
                     // Send the data to printer as a byte array.

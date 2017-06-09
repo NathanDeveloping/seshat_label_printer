@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/seshatlabelprinter.iml" filepath="$PROJECT_DIR$/seshatlabelprinter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/seshat_label_printer.iml" filepath="$PROJECT_DIR$/seshat_label_printer.iml" />
     </modules>
   </component>
 </project>

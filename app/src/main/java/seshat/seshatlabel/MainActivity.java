@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public final static int STATE_RPI = 1;
     public final static int STATE_BACKUP = 2;
 
+
+
     /**
      * Methode lancée à l'ouverture de l'app
      * requête l'API pour afficher la liste des échantillons

@@ -81,7 +81,7 @@ public class LabelModel implements Serializable {
         } finally {
             this.year = "" + time.getYear();
         }
-        this.nbImpressions = 0;
+        this.nbImpressions = 1;
         this.checked = false;
         this.currentFormat = LabelModel.FORMAT_STANDARD;
     }
