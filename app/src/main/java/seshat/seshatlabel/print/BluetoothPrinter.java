@@ -72,11 +72,11 @@ public class BluetoothPrinter {
                     if (URL.length() <= 20) {
                         SizeofQR = "2,5";
                     }
-                    if (URL.length() >=20 && URL.length() <= 50) {
+                    if (URL.length() >=20 && URL.length() <= 70) {
                         SizeofQR = "2,4";
                     }
-                    if (URL.length() >= 50 && URL.length() <= 150) {
-                        SizeofQR = "2,3";
+                    if (URL.length() >= 71 && URL.length() <= 150) {
+                        SizeofQR = "2,4";
                     }
 
 
@@ -86,7 +86,7 @@ public class BluetoothPrinter {
                             "^CF0,32\n" +
                             "^FO210,105^FD" + year + "^FS\n" +
                             "^FO210,160^FD" + project + "^FS\n" +
-                            "^FO40,30^BQN," + SizeofQR + "^FD" + URL + "\n" +
+                            "^FO40,40^BQN," + SizeofQR + "^FD" + URL + "\n" +
                             "^XZ";
 
                     // Send the data to printer as a byte array.
@@ -145,8 +145,9 @@ public class BluetoothPrinter {
                         }
                     }
                     Log.d("BluetoothPrinter", "URL == " + URL);
-                    String SizeofQR = "2,2";
 
+
+                    String SizeofQR = "2,2";
 
                     // This example prints "This is a ZPL test." near the top of the label.
                     String zplData = "^XA\n" +
@@ -154,7 +155,7 @@ public class BluetoothPrinter {
                             "^FO140,27^FD" + labels[0] + "^FS\n" +
                             "^FO140,60^FD" + labels[1] + "^FS\n" +
                             "^FO140,93^FD" + labels[2] + "^FS\n" +
-                            "^FO5,18^BQN,2,4^FD" + URL + "\n" +
+                            "^FO5,18^BQN,"+ SizeofQR +"^FD" + URL + "\n" +
                             "^XZ";
 
                     // Send the data to printer as a byte array.
