@@ -101,15 +101,14 @@ public class Configuration {
         editor.commit();
     }
 
-    public void setDefault(String printerMAC, String rpiIP, String rpiPORT, String backupIP, String backupPORT) {
+    public void setDefault(String rpiIP, String rpiPORT, String backupIP, String backupPORT) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        if((preferences.getString("printerMAC", null) == null) || (preferences.getString("rpiIP", null) == null) ||
+        if((preferences.getString("rpiIP", null) == null) ||
                 (preferences.getString("rpiPORT", null) == null) ||(preferences.getString("backupIP", null) == null) ||
                 (preferences.getString("backupPORT", null) == null)) {
             Log.d("Configuration", "Set default with config file");
-            Log.d("Configuration", "DEFAULT CONFIG ==== " + printerMAC + ":" + rpiIP + ":" + rpiPORT + ":" + backupIP + ":" + backupPORT);
+            Log.d("Configuration", "DEFAULT CONFIG ==== "+rpiIP + ":" + rpiPORT + ":" + backupIP + ":" + backupPORT);
             SharedPreferences.Editor editor = preferences.edit();
-            editor.putString("printerMAC", printerMAC);
             editor.putString("rpiIP", rpiIP);
             editor.putString("rpiPORT", rpiPORT);
             editor.putString("backupIP", backupIP);

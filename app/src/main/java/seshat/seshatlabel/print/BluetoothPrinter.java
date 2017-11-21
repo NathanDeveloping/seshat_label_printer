@@ -32,7 +32,6 @@ public class BluetoothPrinter {
      */
     public BluetoothPrinter(Context context) {
         this.context = context;
-        BluetoothPrinter.PRINTER_MAC_ADDRESS = this.context.getResources().getString(R.string.printerMac);
     }
 
     /**
@@ -50,15 +49,16 @@ public class BluetoothPrinter {
             String URL = qrURL.replace("{label}", label);
             public void run() {
                 try {
+                    Configuration config = Configuration.getInstance();
+
                     // Instantiate insecure connection for given Bluetooth&reg; MAC Address.
-                    Connection thePrinterConn = new BluetoothConnectionInsecure(BluetoothPrinter.PRINTER_MAC_ADDRESS);
+                    Connection thePrinterConn = new BluetoothConnectionInsecure(config.getPrinterMAC());
 
                     // Initialize
                     Looper.prepare();
 
                     // Open the connection - physical connection is established here.
                     thePrinterConn.open();
-                    Configuration config = Configuration.getInstance();
                     String qrURL = config.getqrURL();
                     String URL = label;
                     if (qrURL != null) {
@@ -129,14 +129,14 @@ public class BluetoothPrinter {
             public void run() {
                 try {
                     // Instantiate insecure connection for given Bluetooth&reg; MAC Address.
-                    Connection thePrinterConn = new BluetoothConnectionInsecure(BluetoothPrinter.PRINTER_MAC_ADDRESS);
+                    Configuration config = Configuration.getInstance();
+                    Connection thePrinterConn = new BluetoothConnectionInsecure(config.getPrinterMAC());
 
                     // Initialize
                     Looper.prepare();
 
                     // Open the connection - physical connection is established here.
                     thePrinterConn.open();
-                    Configuration config = Configuration.getInstance();
                     String qrURL = config.getqrURL();
                     String URL = label;
                     if(qrURL != null ) {

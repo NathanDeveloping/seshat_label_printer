@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="printerMac">AC:3F:A4:58:AC:88</string>
     <string name="piAddress">10.10.10.10</string>
     <string name="piPort">8080</string>
     <string name="backupIp">10.10.10.10</string>

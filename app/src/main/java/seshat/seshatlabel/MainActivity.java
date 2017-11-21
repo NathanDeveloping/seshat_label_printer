@@ -20,12 +20,15 @@ import com.daimajia.swipe.util.Attributes;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import android.widget.Toast;
 
 import seshat.seshatlabel.models.Configuration;
 import seshat.seshatlabel.models.LabelModel;
 import seshat.seshatlabel.print.BluetoothPrinter;
 import seshat.seshatlabel.views.AsyncListViewLoader;
 import seshat.seshatlabel.views.SimpleAdapter;
+import android.support.design.widget.Snackbar;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -44,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private long initTime;
 
     private int currentState;
+
 
     public final static int STATE_RPI = 1;
     public final static int STATE_BACKUP = 2;
@@ -72,12 +76,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Resources res = this.getResources();
         Configuration config = Configuration.getInstance();
         config.setContext(this);
-        config.setDefault(res.getString(R.string.printerMac), res.getString(R.string.piAddress), res.getString(R.string.piPort), res.getString(R.string.backupIp), res.getString(R.string.backupPort));
-        // Exec async load task
-        Log.d("MainActivity", "IP : " + config.getRpiIP() + " PORT : " + config.getRpiPORT());
-        this.currentState = MainActivity.STATE_RPI;
-        (new AsyncListViewLoader(this, adpt, mainActivity)).execute("http://" + config.getRpiIP() + ":" + config.getRpiPORT() + "/index.php/api/labels");
-    }
+        config.setDefault(res.getString(R.string.piAddress), res.getString(R.string.piPort), res.getString(R.string.backupIp), res.getString(R.string.backupPort));
+        if(config.getPrinterMAC()!=null ||config.getqrURL()!=null ) {
+
+                // Exec async load task
+            Log.d("MainActivity", "IP : " + config.getRpiIP() + " PORT : " + config.getRpiPORT());
+            this.currentState = MainActivity.STATE_RPI;
+            (new AsyncListViewLoader(this, adpt, mainActivity)).execute("http://" + config.getRpiIP() + ":" + config.getRpiPORT() + "/index.php/api/labels");
+        }
+        else{
+            Toast.makeText(getApplicationContext(),
+                    "Mauvaise configuration, merci de modifier celle-ci!", Toast.LENGTH_LONG).show();
+        }
+        }
+
 
     public void onClick(View v)
     {
